@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/sc-2.0.0/sl-1.3.0/datatables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
+    <style>
+        .cards tbody tr {
+            float: left;
+            width: 19rem;
+            margin: 0.5rem;
+            border: 0.0625rem solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+            box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+            padding:20px;
+        }
+
+        .cards tbody td {
+            display: block;
+            height:35px;
+        }
+
+        .cards thead {
+            display: none;
+        }
+
+        .cards td:before {
+            content: attr(data-label);
+            position: relative;
+            float: left;
+            color: #808080;
+            min-width: 4rem;
+            margin-left: 0;
+            margin-right: 1rem;
+            text-align: left;
+        }
+
+        tr.selected td:before {
+            color: #CCC;
+        }
+
+        .table .avatar {
+            width: 50px;
+        }
+
+        .cards .avatar {
+            width: 150px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h4>
+            <a href="https://www.gyrocode.com/articles/">jQuery DataTables: Card view</a>
+        </h4>
+        <hr>
+        <!-- <div class="alert alert-primary" role="alert">
+            Row data: <span id="row-data"></span>
+        </div> -->
+        <table id="example" class="table table-sm table-hover" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <!-- <th></th> -->
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                    <th>Start</th>
+                    <th>Office</th>
+                    <th>Extn</th>
+                </tr>
+            </thead>
+        </table>
+
+        <!-- <hr><a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery
+            DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a> -->
+    </div>
+    <script>
+        $(document).ready(function () {
+            var table = $('#example').on('init.dt', function () {
+                //console.log('Table initialisation complete: ' + new Date().getTime());
+                $('#example').toggleClass('cards');
+                table.draw('page');
+            }).DataTable({
+                //只遮蔽buttons沒有遮蔽dom，會出現錯誤，則不顯示資料
+                // 'dom':
+                //     "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'<'float-md-right ml-2'B>f>>" +
+                //     "<'row'<'col-sm-12'tr>>" +
+                //     "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                'ajax': 'https://gyrocode.github.io/files/jquery-datatables/objects.json',
+                // 'buttons': ['csv', {
+                //     'text': '<i class="fa fa-id-badge fa-fw" aria-hidden="true"></i>',
+                //     'action': function (e, dt, node) {
+
+                //         $(dt.table().node()).toggleClass('cards');
+                //         $('.fa', node).toggleClass(['fa-table', 'fa-id-badge']);
+
+                //         dt.draw('page');
+                //     },
+                //     'className': 'btn-sm',
+                //     'attr': {
+                //         'title': 'Change views',
+                //     }
+                // }],
+                'pageLength': 15,
+                // 'select': 'single',
+                'columns': [
+                    // {
+                    //     'orderable': false,
+                    //     'data': null,
+                    //     'className': 'text-center',
+                    //     'render': function (data, type, full, meta) {
+                    //         if (type === 'display') {
+                    //             var token = (Math.random() * 3 * 1e38).toString(16);
+                    //             data = '<i class="fa fa-user fa-fw"></i>';
+                    //             data = '<img src="https://www.gravatar.com/avatar/' + token + '.png?d=robohash" class="avatar border rounded-circle">';
+                    //         }
+
+                    //         return data;
+                    //     }
+                    // },
+                    {
+                        'data': 'name'
+                    },
+                    {
+                        'data': 'position'
+                    },
+                    {
+                        'data': 'salary',
+                        'class': 'text-right'
+                    },
+                    {
+                        'data': 'start_date',
+                        'class': 'text-right'
+                    },
+                    {
+                        'data': 'office'
+                    },
+                    {
+                        'data': 'extn'
+                    }
+                ],
+                'drawCallback': function (settings) {
+                    var api = this.api();
+                    var $table = $(api.table().node());
+
+                    if ($table.hasClass('cards')) {
+
+                        // Create an array of labels containing all table headers
+                        var labels = [];
+                        $('thead th', $table).each(function () {
+                            labels.push($(this).text());
+                        });
+
+                        // Add data-label attribute to each cell
+                        $('tbody tr', $table).each(function () {
+                            $(this).find('td').each(function (column) {
+                                $(this).attr('data-label', labels[column]);
+                            });
+                        });
+
+                        var max = 0;
+                        $('tbody tr', $table).each(function () {
+                            max = Math.max($(this).height(), max);
+                        }).height(max);
+
+                    } else {
+                        // Remove data-label attribute from each cell
+                        $('tbody td', $table).each(function () {
+                            $(this).removeAttr('data-label');
+                        });
+
+                        $('tbody tr', $table).each(function () {
+                            $(this).height('auto');
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

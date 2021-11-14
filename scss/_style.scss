@@ -1,0 +1,339 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+$grey:#F1EFEC;
+$lightGreen:#B1B887;
+$white:#FFFFFF;
+$green:#112B26;
+$black:#000000;
+$lightGreen:#B1B887;
+
+*{
+    box-sizing: border-box;
+    // outline:1px solid pink;
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    a{
+        text-decoration:none;
+        color: inherit;;
+    }
+
+}
+
+
+
+body{
+    background-color: $green;
+}
+
+.first {
+    width: 100%;
+    height: 930px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.sightseeing {
+    background-image: url("./background/0.png");
+}
+
+.diet {
+    background-image: url("background/1.png");
+}
+
+.lodging {
+    background-image: url("background/2.png");
+}
+
+.activity {
+    background-image: url("background/3.png");
+}
+
+.wrap{
+    width: 1116px;
+    margin: 0 auto;
+
+}
+.attractions{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+
+    .introduce{
+        margin: 3rem auto 2rem auto;
+        max-width: 546px;  
+    }
+    p{
+        font-size: 1rem;
+        line-height: 2rem;
+        color: $grey;
+    }
+}
+.main-menu {
+    position: fixed;
+    top: 0px;
+    z-index: inherit;
+    width: 100%;
+}
+
+.anycolor {
+    background-color: #F1EFEC;
+}
+
+.classy-container {
+    width: 75%;
+    margin: 0px auto;
+}
+
+.classy-container a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+.subjectArea {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    color: $white;
+    border-bottom-style: inset;
+    margin-bottom: 10px;
+}
+
+.subjectArea a {
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: 400;
+    display: inline-block;
+    margin: 0px 100px;
+    color: $white;
+}
+
+.selectArea
+{
+    padding: 0px 300px;
+}
+
+.classy-navbar {
+    width: 100%;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+}
+
+.justify-content-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.classynav ul {
+    margin-top: 20px;
+}
+
+.classynav ul li {
+    display: inline-block;
+    clear: both;
+    position: inherit;
+    z-index: 10;
+}
+
+.classynav ul li a {
+    padding: 0 30px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.classynav ul li a:focus {
+    color: #70c745;
+}
+
+.link-white ul li a {
+    color: #ffffff;
+}
+
+.link-black ul li a {
+    color: #000000;
+}
+
+.search {
+    background-color: lightpink;
+    height: 100px;
+    padding: 0% 20%;
+    text-align: center;
+    margin-top: -50px;
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,112b26+48,112b26+48&0+0,1+48 */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(17, 43, 38, 1) 48%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(17, 43, 38, 1) 48%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(17, 43, 38, 1) 48%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#112b26', GradientType=0);
+    /* IE6-9 */
+}
+
+.text-white
+{
+    color: #ffffff;
+}
+
+h3{
+    font-size: 2rem;
+    line-height: 3rem;
+    color:$white;
+    margin: 0 auto;
+    text-align: center;
+    font-weight:bold;
+}
+p{
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.placeList{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin-bottom: 1.5rem;
+
+}
+
+.placeListCard{
+    width: 22.25rem;
+    height: 26.43rem;
+    color:$white;
+    align-items: center;
+    
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    .placeListCardImg img{
+        display: block;
+        width: 100%;
+        // background-size: contain;
+        overflow: hidden;
+    }
+
+    .placeText{
+        margin:2rem;
+
+        h4{
+            font-size: 1.5rem ;
+            line-height: 2rem;
+            font-weight:bold;
+            margin-bottom: 1rem;
+        }
+        .listCardNews{
+            margin-bottom: 0.5rem;
+            span{
+                vertical-align:middle;
+                margin-right: 0.5rem;
+                color: $grey;
+            }
+
+        }
+
+    }
+    .filter-whiteBlack{
+        filter:invert(0%);
+    }
+}
+
+
+.telLearnMore{
+    display: flex;
+    justify-content: space-between;
+}
+
+.d-none{
+    display: none;
+}
+.placeList a:hover{
+    z-index: -10;
+    border-radius: 0.4rem;
+    .d-none{
+        display: block;
+    }
+    
+    .placeListCard{
+        border: 1px solid #B1B887;
+        margin-top: 0rem;
+        color: $black;
+        background-color: $grey;
+
+        span{
+            color: $black;
+        }
+
+    }
+    .filter-whiteBlack{
+        filter:invert(100%);
+    }
+    .filter-lightGreen{
+        filter:invert(100%);
+    }
+    .d-none{
+        display: inline;
+    }
+    .placeText{
+        background-color: $grey;
+    }
+    .more span{
+        color: $lightGreen;
+    }
+    .placeListCardImg{
+        position: relative;
+
+    }
+    .hoverGrey{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        background: linear-gradient(180deg, rgba(241, 239, 236, 0) 0%, #F1EFEC 100%);
+    }
+
+}
+.footer{
+    margin: 3rem;
+    margin-right: 0.5rem;
+    
+    ul {
+        display: flex;
+        justify-content: space-between;
+        li{
+        
+            margin-top: 1rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: $grey;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+            color: #F1EFEC;
+        }
+    }
+    
+}
+
+@media(max-width:413px){
+    .wrap{
+        width: 366px;
+        flex-direction: column;
+    }
+    .introduce{
+        margin: 0 auto;
+        width: 366px;
+        align-items: center;
+    }
+
+    
+}
+// 測試1

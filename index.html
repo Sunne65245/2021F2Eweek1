@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一週首頁</title>
+    <!-- 首頁 -->
+    <!-- 11/9 加上套件 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <!-- 11/9 加上套件 -->
+    <!-- 載入資料 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./css/all.css">
+
+</head>
+
+<body>
+    <div id="animation" class="first ">
+        <!-- 導覽列 -->
+        <div class="main-menu">
+            <div class="classy-container">
+                <nav class="classy-navbar justify-content-between">
+                    <a href="#"><img id="logo" src="img/logo_white.png" alt=""></a>
+                    <div>
+                        <span><span></span><span></span><span></span></span>
+                    </div>
+                    <div class="classynav link-white">
+                        <ul>
+                            <li><a href="#">在地觀光</a></li>
+                            <li><a href="#">特色飲食</a></li>
+                            <li><a href="#">休閒住宿</a></li>
+                            <li><a href="#">體驗活動</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- 設定寬度 -->
+    <div class="second ">
+        <!-- 漸層 -->
+        <div class="search">
+            <div id="englishSubject" class="text-white"></div>
+            <div>
+                <div class="subjectArea">
+                    <a id="subjectToLeft" href="javascript:void(0)"> < </a>
+                        <span id="subject"></span>
+                    <a id="subjectToRight" href="javascript:void(0)"> > </a>
+                </div>
+                <div class="selectArea">
+                    <select id="search" class="form-select" aria-label="Default select example">
+                        <option value="0">選擇城市</option>
+                        <option value="1">台北</option>
+                        <option value="2">台中</option>
+                        <option value="3">高雄</option>
+                        <option value="4">臺東</option>
+                        <option value="5">澎湖</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrap">
+        <div class="attractions">
+            <div class="introduce">
+                <h3>探索未知</h3>
+                <p>每一段旅行都是場探索，探索一切的未知，旅行也是段與自己獨處的時光，既浪漫又艱辛，但旅行能讓人找到自己，帶著更堅定的信念展開一趟蛻變的過程</p>
+            </div>
+
+            <div class="placeList">
+                <a href="">
+                    <div class="placeListCard">
+                        <div class="placeListCardImg">
+                            <div class="hoverGrey"></div>
+                            
+                            <img src="./img/柴口十分適合新手來體驗浮潛 (1) 1.png" alt="">
+                        </div>
+
+                        <div class="placeText">
+                            <h4>柴口浮潛區</h4>
+                            <ul>
+                                <li class="listCardNews">
+                                    <!-- <span><img src="./img/location_on_black_24dp 1.svg" alt=""
+                                            class="filter-whiteBlack"></span> -->
+                                    <span class="listCardNews">臺東縣951綠島鄉環島公路2公里處</span>
+                                </li>
+
+                                <li class="listCardNews">
+                                    <div>
+                                        <span><img src="./img/call_black_24dp 1.svg" alt=""
+                                                class="filter-whiteBlack"></span>
+                                        <span class="listCardNews">
+                                            <a href="tel:+886-8-9672026">886-8-9672026</a>
+                                        </span>
+                                    </div>
+                                    <div class="d-none more">
+                                        <span>了解更多</span>
+                                        <span><img src="./img/arrow_right_alt_black_24dp 1.png" alt=""></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div>
+                <img src="./img/logo_white.png" alt="">
+                
+            </div>
+
+            <ul>
+                <li>
+                    <span>邁出第一步，找尋旅行的意義</span>
+                </li>
+                <li>
+                    <span>© 2021  園丁出品  All Rights Reserved.</span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- <script src="https://cdnout.com/jsSHA"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+    <script src="./js/sightseeing.js"></script>
+</body>
+
+
+</html>
